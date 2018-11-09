@@ -1,4 +1,12 @@
 <h1>Imported Records</h1>
+
+<%= form_tag "/results", method: :get do %>
+  <%= text_field_tag :query %>
+  <%= submit_tag 'Submit' %>
+<% end %>
+
+<br />
+
 <table class="table table-bordered table-striped">
   <thead>
     <tr>

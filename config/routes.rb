@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get '/home'             => 'home#index'
   get '/results'          => 'home#results'
   post '/process_records' => 'home#process_records'
+  post '/search'          => 'home#search'
 end

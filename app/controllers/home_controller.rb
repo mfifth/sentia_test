@@ -17,12 +17,11 @@ class HomeController < ApplicationController
   end
 
   def results
-    @csv_records = CsvRecord.order("#{sort_column} #{sort_direction}")
-  end
-
-  def search
-    query = params[:query]
-    puts query
+    if params[:query]
+      @csv_records = CsvRecord.where('name LIKE ?', "%#{params[:query]}%")
+    else
+      @csv_records = CsvRecord.order("#{sort_column} #{sort_direction}")
+    end
   end
 
   private
